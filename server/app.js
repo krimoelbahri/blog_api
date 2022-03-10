@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
 
 const authRouter = require("./routes/authRoute");
 const postsRouter = require("./routes/postsRoute");
@@ -17,6 +18,7 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 //Using routes
 app.use("/api/posts", postsRouter);

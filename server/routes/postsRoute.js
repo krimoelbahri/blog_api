@@ -12,6 +12,9 @@ router.get("/:id", postsController.getPost);
 // Adding new Post
 router.post("/", postsController.addPost);
 
+// Adding new Post
+router.post("/:id/comment", postsController.addComment);
+
 // update a Post
 router.put("/:id", postsController.updatePost);
 

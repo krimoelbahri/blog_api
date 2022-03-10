@@ -2,9 +2,12 @@ const express = require("express");
 const router = express.Router();
 
 // Require controller modules.
-var userController = require("../controllers/authController");
+var authController = require("../controllers/authController");
 
 //GET a posts
-router.get("/:id", userController.getUser);
+router.post("/signup", authController.signupUser);
+
+//GET a posts
+router.post("/signin", authController.signinUser);
 
 module.exports = router;
