@@ -9,7 +9,7 @@ exports.getPosts = asyncHandler(async function (req, res) {
 	res.status(200).json(posts);
 });
 
-// GET a unique
+// GET a unique -- Acces Public
 // route GET /api/posts/:id
 exports.getPost = asyncHandler(async function (req, res) {
 	let id = req.params.id;

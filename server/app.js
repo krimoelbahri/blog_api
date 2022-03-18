@@ -2,6 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+const { errorHandler } = require("./middleware/errorMiddleware");
 
 const authRouter = require("./routes/authRoute");
 const postsRouter = require("./routes/postsRoute");
@@ -24,4 +25,5 @@ app.use(cookieParser());
 app.use("/api/posts", postsRouter);
 app.use("/api/user", authRouter);
 
+app.use(errorHandler);
 app.listen(port, () => console.log(`Server Listening on port ${port}`));
