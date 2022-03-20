@@ -1,4 +1,12 @@
-import { Container } from "../styles/header.style";
+import { Container } from "../styles/Header.style";
+import { Link } from "react-router-dom";
+
 export default function Header() {
-	return <Container>Header</Container>;
+	return (
+		<Container>
+			<Link to={"/"}>
+				<div>Elbahri BLOG</div>
+			</Link>
+		</Container>
+	);
 }

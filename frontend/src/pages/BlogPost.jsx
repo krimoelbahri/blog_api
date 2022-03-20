@@ -1,5 +1,13 @@
+import Header from "../components/Header";
+import Post from "../components/Post";
+
 function BlogPost() {
-	return <div>BlogPost</div>;
+	return (
+		<>
+			<Header />
+			<Post />
+		</>
+	);
 }
 
 export default BlogPost;

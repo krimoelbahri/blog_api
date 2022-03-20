@@ -13,7 +13,13 @@ exports.getPosts = asyncHandler(async function (req, res) {
 // route GET /api/posts/:id
 exports.getPost = asyncHandler(async function (req, res) {
 	let id = req.params.id;
-	let post = await Post.findById(id).populate("comments").populate("author");
+	let post = await Post.findById(id)
+		.populate("comments")
+		.populate("author")
+		.catch((err) => {
+			res.status(400);
+			throw new Error("Post not found");
+		});
 
 	res.status(200).json(post);
 });
